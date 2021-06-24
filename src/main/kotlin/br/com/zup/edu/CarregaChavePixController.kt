@@ -28,4 +28,16 @@ class ConsultaChavePixController (
 
         return HttpResponse.ok(DetalheChavePixResponse(chaveResponse))
     }
+
+    @Get("/pix/")
+    fun lista(clientId: UUID) : HttpResponse<Any> {
+
+        LOGGER.info("[$clientId] listando chaves pix")
+        val pix = listaChavesPixClient.lista(ListaChavePixRequest.newBuilder()
+            .setClientId(clientId.toString())
+            .build())
+
+        val chaves = pix.chavesList.map { ChavePixResponse(it) }
+        return HttpResponse.ok(chaves)
+    }
 }
