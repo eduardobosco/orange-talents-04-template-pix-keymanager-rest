@@ -42,7 +42,7 @@ internal class RegistraChavePixControllerTest{
 
 
         val novaChavePix = NovaChavePixRequest(tipoDeConta = TipoDeContaRequest.CONTA_CORRENTE,
-            chave = "950.258.910-60",
+            chave = "093.036.287-05",
             tipoDeChave = TipoDeChaveRequest.CPF
         )
 
